@@ -77,7 +77,7 @@ function StatBox({ item, delay }: { item: { valeur: number; suffixe?: string; la
 export function MarquesTicker({ marques }: { marques: Marque[] }) {
   const items = marques.length > 0
     ? marques.map((m) => m.nom)
-    : ['BYD', 'MG Motor', 'Lingco', 'SINOTRUK', 'FAW Trucks', 'HOWO', 'Sany', 'Mahindra', 'Foton', 'Dongfeng']
+    : ['FAW Trucks', 'Foton', 'FAW Trucks', 'Foton', 'FAW Trucks', 'Foton']
 
   const doubled = [...items, ...items]
 

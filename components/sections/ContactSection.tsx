@@ -128,7 +128,7 @@ export default function ContactSection({ settings }: { settings: SiteSettings | 
               <option>Achat véhicule neuf / occasion</option>
               <option>Location de véhicule</option>
               <option>Import / Export de véhicules</option>
-              <option>Engins & Équipements (FAW, SINOTRUK, SANY)</option>
+              <option>Engins & Équipements (FAW, FOTON)</option>
               <option>Financement (LOA / LLD / Crédit)</option>
               <option>Partenariat commercial</option>
               <option>Autre</option>
@@ -137,7 +137,7 @@ export default function ContactSection({ settings }: { settings: SiteSettings | 
 
           <div style={{ marginTop: '14px' }}>
             <label style={{ display: 'block', fontFamily: 'var(--font-body)', fontSize: '.59rem', fontWeight: 700, letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '5px' }}>Détails</label>
-            <input style={inputStyle} type="text" placeholder="ex : BYD Sealion 7, Flotte 10 camions HOWO..." value={form.detail} onChange={set('detail')} />
+            <input style={inputStyle} type="text" placeholder="ex : FAW J6P 6×4, Flotte 5 camions Foton..." value={form.detail} onChange={set('detail')} />
           </div>
 
           <div style={{ marginTop: '14px' }}>

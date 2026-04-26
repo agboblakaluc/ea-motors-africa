@@ -4,7 +4,7 @@ import type { Marque } from '@/lib/types'
 export default function MarquesTicker({ marques }: { marques: Marque[] }) {
   const names = marques.length > 0
     ? marques.map((m) => m.nom)
-    : ['BYD', 'MG Motor', 'Lingco', 'SINOTRUK', 'FAW Trucks', 'HOWO', 'Sany', 'Mahindra', 'Foton', 'Dongfeng']
+    : ['FAW Trucks', 'Foton', 'FAW Trucks', 'Foton', 'FAW Trucks', 'Foton']
   const doubled = [...names, ...names]
   return (
     <section id="marques" style={{ padding: '56px 6%', background: 'var(--light)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>

@@ -105,14 +105,9 @@ const defaultEquipements: Omit<Equipement, '_id'>[] = [
     items: ['Tracteurs routiers & semi-remorques', 'Camions benne 6×4 et 8×4', 'Transport de marchandises CEDEAO'],
   },
   {
-    marque: 'SINOTRUK', sousTitre: 'China National Heavy Duty Truck', ordre: 2,
-    description: "Spécialiste des véhicules lourds HOWO, fiable sur les chantiers BTP et mines d'Afrique.",
-    items: ['Camions benne HOWO 371 / 420 ch', 'Malaxeurs à béton 8×4 — 10 m³', 'Grues & engins de levage'],
-  },
-  {
-    marque: 'SANY', sousTitre: 'Sany Heavy Industry Co. · Chine', ordre: 3,
-    description: "N°1 mondial des engins de chantier pour l'infrastructure, le BTP et les industries extractives.",
-    items: ['Excavatrices & pelles hydrauliques', 'Grues à tour & grues mobiles', 'Bulldozers, niveleuses & compacteurs'],
+    marque: 'FOTON', sousTitre: 'Foton Motor Co. · Chine', ordre: 2,
+    description: "Leader des véhicules utilitaires en Asie, Foton propose des camions légers à lourds fiables et économiques pour les marchés africains.",
+    items: ['Camions benne GTL 6×4 & 8×4', 'Tracteurs routiers AUMAN GTL', 'Benne premium AUMAN EST'],
   },
 ]
 

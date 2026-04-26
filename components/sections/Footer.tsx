@@ -55,7 +55,7 @@ export default function Footer({ settings }: { settings: SiteSettings | null }) 
         <div>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '.59rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,.3)', marginBottom: '16px' }}>Services</div>
           <ul style={{ listStyle: 'none' }}>
-            {['Vente neuf & occasion', 'Location véhicules', 'Import / Export', 'FAW / SINOTRUK / SANY', 'Négoce général'].map((label) => (
+            {['Vente neuf & occasion', 'Location véhicules', 'Import / Export', 'FAW / FOTON', 'Négoce général'].map((label) => (
               <li key={label} style={{ marginBottom: '8px' }}>
                 <a href="#contact" style={{ fontSize: '.76rem', color: 'rgba(255,255,255,.4)', textDecoration: 'none', transition: 'color .3s', fontWeight: 300 }}
                   onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'rgba(200,210,222,.8)')}
