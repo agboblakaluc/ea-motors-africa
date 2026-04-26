@@ -27,7 +27,7 @@ export default function EquipementsSection({ equipements }: { equipements: Equip
             Nos Equipements & Engins Lourds
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '18px', maxWidth: '800px', margin: '0 auto' }}>
+        <div className="eq-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '18px', maxWidth: '800px', margin: '0 auto' }}>
           {items.map((eq) => (
             <div key={eq._id || eq.marque}
               style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)', borderRadius: '6px', padding: '28px 26px', transition: 'all .3s' }}

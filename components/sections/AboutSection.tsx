@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { urlFor } from '@/lib/sanity'
 import type { Apropos, Domaine, Equipement } from '@/lib/types'
 
@@ -17,11 +18,15 @@ export function AboutSection({ apropos }: { apropos: Apropos | null }) {
            className="grid-responsive">
         {/* Image */}
         <div style={{ position: 'relative', height: '480px' }}>
-          <img
-            src={apropos?.image ? urlFor(apropos.image).width(800).url() : '/faw/family%20entrepot.png'}
-            alt="EA Motors showroom"
-            style={{ width: '88%', height: '100%', objectFit: 'cover', borderRadius: '4px', boxShadow: 'var(--sh-lg)', filter: 'brightness(.92)' }}
-          />
+          <div style={{ position: 'relative', width: '88%', height: '100%', overflow: 'hidden', borderRadius: '4px', boxShadow: 'var(--sh-lg)', filter: 'brightness(.92)' }}>
+            <Image
+              src={apropos?.image ? urlFor(apropos.image).width(800).url() : '/faw/family%20entrepot.png'}
+              alt="EA Motors showroom"
+              fill
+              sizes="(max-width: 768px) 100vw, 44vw"
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
           <div style={{ position: 'absolute', bottom: '-16px', right: '-16px', width: '130px', height: '130px', border: '2px solid var(--blue)', borderRadius: '4px', zIndex: -1 }} />
           <div style={{ position: 'absolute', top: '26px', right: 0, background: 'var(--blue)', color: 'white', padding: '16px 20px', borderRadius: '4px', boxShadow: '0 8px 32px rgba(27,58,107,.35)' }}>
             <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '2rem', lineHeight: 1 }}>Lomé</div>

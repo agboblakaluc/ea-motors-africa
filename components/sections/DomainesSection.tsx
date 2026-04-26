@@ -20,7 +20,7 @@ export default function DomainesSection({ domaines }: { domaines: Domaine[] }) {
           Nos <span style={{ color: 'var(--blue)' }}>{cols} Domaines</span>
         </h2>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols},1fr)`, gap: '2px', background: 'rgba(27,58,107,.07)' }}>
+      <div className="domaines-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${cols},1fr)`, gap: '2px', background: 'rgba(27,58,107,.07)' }}>
         {items.map((d) => (
           <div key={d._id || d.numero}
             style={{ background: 'white', padding: '36px 26px', position: 'relative', overflow: 'hidden', transition: 'background .3s', cursor: 'default' }}

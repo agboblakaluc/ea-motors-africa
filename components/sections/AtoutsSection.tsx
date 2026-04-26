@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import type { AtoutsData } from '@/lib/types'
 import { urlFor } from '@/lib/sanity'
 
@@ -11,7 +12,7 @@ export default function AtoutsSection({ atouts }: { atouts: AtoutsData | null })
   ]
   return (
     <section id="atouts" style={{ background: 'var(--off)', padding: '90px 6%' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="atouts-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
         <div>
           <p className="section-tag">Nos Atouts</p>
           <h2 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', textTransform: 'uppercase', color: 'var(--dark)' }}>
@@ -28,11 +29,13 @@ export default function AtoutsSection({ atouts }: { atouts: AtoutsData | null })
             </div>
           ))}
         </div>
-        <div style={{ position: 'relative', height: '440px' }}>
-          <img
+        <div style={{ position: 'relative', height: '440px', overflow: 'hidden', borderRadius: '6px', boxShadow: 'var(--sh-lg)', filter: 'brightness(.9)' }}>
+          <Image
             src={atouts?.image ? urlFor(atouts.image).width(800).url() : '/faw/montagne.png'}
             alt="EA Motors fleet"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '6px', boxShadow: 'var(--sh-lg)', filter: 'brightness(.9)' }}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: 'cover' }}
           />
         </div>
       </div>

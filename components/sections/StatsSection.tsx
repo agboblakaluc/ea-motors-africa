@@ -13,7 +13,7 @@ export function StatsSection({ stats }: { stats: Stats | null }) {
 
   return (
     <section id="stats" style={{ background: 'var(--blue)', padding: '0 6%' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${items.length},1fr)`, maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${items.length},1fr)`, maxWidth: '1200px', margin: '0 auto' }}>
         {items.map((item, i) => (
           <StatBox key={i} item={item} delay={i * 100} />
         ))}

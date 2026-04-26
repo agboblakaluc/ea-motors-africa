@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import type { Hero, SiteSettings } from '@/lib/types'
 
 type IntroSlide = { type: 'intro'; src: string; photoLabel: string }
@@ -108,13 +109,14 @@ export default function HeroSection({ hero, settings }: HeroProps) {
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         position: 'relative', minHeight: '88vh', overflow: 'hidden',
         background: '#fff', display: 'flex', alignItems: 'stretch',
       }}
     >
       {/* ── Photos empilées avec clip-path wipe + Ken Burns ── */}
-      <div style={{
+      <div className="hero-photo" style={{
         position: 'absolute', right: '4%', top: '50%',
         transform: 'translateY(-50%)',
         width: '43%', height: '80%',
@@ -127,7 +129,6 @@ export default function HeroSection({ hero, settings }: HeroProps) {
               key={i}
               style={{
                 position: 'absolute', inset: 0, overflow: 'hidden',
-                /* clip-path wipe: entrant vient de gauche, sortant part à droite */
                 clipPath: isActive ? 'inset(0 0% 0 0)' : 'inset(0 100% 0 0)',
                 transition: isActive
                   ? 'clip-path 0.9s cubic-bezier(0.77,0,0.175,1)'
@@ -137,16 +138,15 @@ export default function HeroSection({ hero, settings }: HeroProps) {
                 zIndex: isActive ? 2 : 1,
               }}
             >
-              <img
+              <Image
                 src={s.src}
                 alt={s.photoLabel}
+                fill
+                priority={i === 0}
+                sizes="(max-width: 768px) 100vw, 43vw"
                 style={{
-                  width: '100%', height: '100%',
                   objectFit: 'cover', objectPosition: 'center',
-                  /* Ken Burns sur la photo active */
-                  animation: isActive
-                    ? 'hero-ken-burns 6s ease-out forwards'
-                    : 'none',
+                  animation: isActive ? 'hero-ken-burns 6s ease-out forwards' : 'none',
                   transform: isActive ? undefined : 'scale(1.08)',
                 }}
               />
@@ -172,7 +172,7 @@ export default function HeroSection({ hero, settings }: HeroProps) {
       </div>
 
       {/* ── Colonne gauche — contenu, re-key pour relancer les animations ── */}
-      <div style={{ width: '52%', display: 'flex', alignItems: 'center' }}>
+      <div className="hero-content" style={{ width: '52%', display: 'flex', alignItems: 'center' }}>
         <div
           key={slideIdx}
           style={{
@@ -275,7 +275,7 @@ export default function HeroSection({ hero, settings }: HeroProps) {
       </div>
 
       {/* ── Navigation ── */}
-      <div style={{
+      <div className="hero-nav" style={{
         position: 'absolute', bottom: '28px', left: '6%',
         display: 'flex', alignItems: 'center', gap: '10px', zIndex: 10,
       }}>

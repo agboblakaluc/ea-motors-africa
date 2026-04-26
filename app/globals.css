@@ -27,7 +27,8 @@
   --sh-md: 0 8px 40px rgba(5, 13, 26, 0.18);
   --sh-lg: 0 20px 60px rgba(5, 13, 26, 0.28);
   --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-bebas:   'Bebas Neue', sans-serif;
+  --font-body:    'Outfit', sans-serif;
 }
 
 /* ── Hero transitions ──────────────────────────────────── */
@@ -160,4 +161,86 @@ body {
 @keyframes scroll-br {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE MOBILE — max-width: 768px
+   Utilise !important pour surcharger les inline styles React
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Sections : padding réduit ── */
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* ── Hero ── */
+  .hero-section {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+  .hero-photo {
+    position: relative !important;
+    width: 100% !important;
+    height: 56vw !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+  .hero-content {
+    width: 100% !important;
+    padding-bottom: 70px !important;
+  }
+  .hero-nav {
+    left: 6% !important;
+    bottom: 18px !important;
+  }
+
+  /* ── Stats : 4-col → 2-col ── */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* ── About (grid-responsive) & Atouts : 2-col → 1-col ── */
+  .grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
+  .atouts-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Domaines : 5-col → 2-col ── */
+  .domaines-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── Equipements : 2-col → 1-col ── */
+  .eq-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+  }
+
+  /* ── Véhicules : 5-col → 2-col ── */
+  .vehicules-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* ── Modal véhicule : 2-col → 1-col ── */
+  .vehicule-modal-inner {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Très petits écrans (< 480 px) */
+@media (max-width: 480px) {
+  .domaines-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .vehicules-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

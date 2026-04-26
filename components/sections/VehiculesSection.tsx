@@ -124,18 +124,61 @@ const DEFAULT_VEHICULES: Vehicule[] = [
   },
 ]
 
-// Photos locales
+// Photos locales — chemins réels dans /public
 const LOCAL_IMAGES: Record<string, string[]> = {
-  'faw-j6p-6x4-tractor':  ['/faw/j6p-6x4/face.jpg', '/faw/j6p-6x4/pd.jpg', '/faw/j6p-6x4/pd2.jpg', '/faw/j6p-6x4/pg.jpg', '/faw/faw-j6p-6x4-420hp-tractor-truck/photo-01.jpg'],
-  'faw-j6p-4x2-tractor':  ['/faw/j6p-4x2/face.jpg', '/faw/j6p-4x2/pd1.jpg', '/faw/j6p-4x2/pd2.jpg', '/faw/j6p-4x2/profil-g.jpg', '/faw/faw-j6p-4x2-tractor-truck/photo-01.jpg'],
-  'faw-j6p-dump-6x4':     ['/faw/faw-dump-truck/photo-01-j6p-dump.jpg', '/faw/faw-dump-truck/photo-02-j6p-dump.jpg', '/faw/faw-dump-truck/photo-03-j6p-dump.jpg'],
-  'faw-semi-dump-3ax':    ['/faw/semi-trailer/3ax-dump.jpg', '/faw/semi-trailer/4ax-dump.jpg', '/faw/semi-trailer/5ax-dump.jpg'],
-  'faw-semi-flatbed-4ax': ['/faw/faw-trailer/photo-01-flatbed-trailer.jpg', '/faw/faw-trailer/photo-02-flatbed-trailer.jpg', '/faw/semi-trailer/4ax-flatbed.jpg', '/faw/semi-trailer/4ax-flatbed2.jpg'],
-  'faw-semi-tanker-3ax':  ['/faw/semi-trailer/3ax-tanker.jpg'],
-  'foton-auman-gtl-tractor': ['/foton/Foton-AUMAN-GTL-6X4-Tractor-Red.jpg', '/foton/Foton-AUMAN-GTL-6X4-Tractor-Red-1.jpg', '/foton/Foton-AUMAN-GTL-6X4-Silver-Tractor.jpg', '/foton/Foton-AUMAN-GTL-6X4-Silver-Tractor-1.jpg', '/foton/Foton-AUMAN-GTL-6X4-Silver-Tractor-2.jpg'],
-  'foton-auman-gtl-dump': ['/foton/FOTON-Auman-GTL-6X4-dump-truck.jpg'],
-  'foton-auman-8x4-dump': ['/foton/FOTON-Auman-GTL-8X4-Dump-Truck-Green.jpg'],
-  'foton-auman-est-dump': ['/foton/AUMAN-EST-DUMPER.jpg'],
+  'faw-j6p-6x4-tractor': [
+    '/faw/1-01.jpg',
+    '/faw/j6p-6x4/face.jpg',
+    '/faw/j6p-6x4/pd.jpg',
+    '/faw/j6p-6x4/pd2.jpg',
+    '/faw/j6p-6x4/pg.jpg',
+  ],
+  'faw-j6p-4x2-tractor': [
+    '/faw/j6p-4x2/face.jpg',
+    '/faw/j6p-4x2/pd1.jpg',
+    '/faw/j6p-4x2/pd2.jpg',
+    '/faw/j6p-4x2/profil-g.jpg',
+  ],
+  'faw-j6p-dump-6x4': [
+    '/faw/faw-dump-truck/photo-01-j6p-dump.jpg',
+  ],
+  'faw-semi-dump-3ax': [
+    '/faw/semi-benne-3ax.png',
+    '/faw/semi-trailer/3ax-dump.jpg',
+    '/faw/semi-trailer/4ax-dump.jpg',
+    '/faw/semi-trailer/5ax-dump.jpg',
+  ],
+  'faw-semi-flatbed-4ax': [
+    '/faw/semi-plateau.png',
+    '/faw/faw-trailer/photo-01-flatbed-trailer.jpg',
+    '/faw/faw-trailer/photo-02-flatbed-trailer.jpg',
+    '/faw/semi-trailer/4ax-flatbed.jpg',
+    '/faw/semi-trailer/4ax-flatbed2.jpg',
+  ],
+  'faw-semi-tanker-3ax': [
+    '/faw/semi-citerne.png',
+    '/faw/semi-trailer/3ax-tanker.jpg',
+  ],
+  'foton-auman-gtl-tractor': [
+    '/faw/7-07.jpg',
+    '/foton/Foton-AUMAN-GTL-6X4-Tractor-Red.jpg',
+    '/foton/Foton-AUMAN-GTL-6X4-Tractor-Red-1.jpg',
+    '/foton/Foton-AUMAN-GTL-6X4-Silver-Tractor.jpg',
+    '/foton/Foton-AUMAN-GTL-6X4-Silver-Tractor-1.jpg',
+    '/foton/Foton-AUMAN-GTL-6X4-Silver-Tractor-2.jpg',
+  ],
+  'foton-auman-gtl-dump': [
+    '/faw/8-08.jpg',
+    '/foton/FOTON-Auman-GTL-6X4-dump-truck.jpg',
+  ],
+  'foton-auman-8x4-dump': [
+    '/faw/9-09.jpg',
+    '/faw/12-roues-chantier.jpg',
+    '/foton/FOTON-Auman-GTL-8X4-Dump-Truck-Green.jpg',
+  ],
+  'foton-auman-est-dump': [
+    '/foton/AUMAN-EST-DUMPER.jpg',
+  ],
 }
 
 interface VehiculesSectionProps {
@@ -199,7 +242,7 @@ export default function VehiculesSection({ vehicules }: VehiculesSectionProps) {
         </div>
 
         {/* Grid */}
-        <div style={{
+        <div className="vehicules-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(5, 1fr)',
           gap: '14px',
@@ -237,6 +280,7 @@ export default function VehiculesSection({ vehicules }: VehiculesSectionProps) {
                     <img
                       src={imgSrc}
                       alt={`${v.marque} ${v.modele}`}
+                      loading="lazy"
                       style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .5s' }}
                       onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.04)' }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1)' }}
@@ -368,6 +412,7 @@ function VehiculeModal({ vehicule: v, photos, galleryIdx, setGalleryIdx, onClose
     >
       <div
         onClick={(e) => e.stopPropagation()}
+        className="vehicule-modal-inner"
         style={{
           background: 'white', borderRadius: '6px',
           maxWidth: '960px', width: '100%', maxHeight: '90vh',
