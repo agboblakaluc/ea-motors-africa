@@ -10,7 +10,7 @@ export const siteSettingsSchema = defineType({
     defineField({ name: 'tagline', title: 'Sous-titre', type: 'string', initialValue: 'Concessionnaire Automobile · Lomé, Togo' }),
     defineField({ name: 'slogan', title: 'Slogan', type: 'string', initialValue: '▶ Driving Excellence !' }),
     defineField({ name: 'phone', title: 'Téléphone', type: 'string', initialValue: '+228 9603 4681' }),
-    defineField({ name: 'email', title: 'Email', type: 'string', initialValue: 'eam.togo@gmail.com' }),
+    defineField({ name: 'email', title: 'Email', type: 'string', initialValue: 'contact@eamotorsafrique.com' }),
     defineField({ name: 'address', title: 'Adresse ligne 1', type: 'string', initialValue: "Rue de l'ancien siège Unir" }),
     defineField({ name: 'addressLine2', title: 'Adresse ligne 2', type: 'string', initialValue: 'Agbalépédo, Lomé - Togo' }),
     defineField({ name: 'zone', title: 'Zone desservie', type: 'string', initialValue: 'Togo · Bénin · Burkina Faso · Espace CEDEAO' }),

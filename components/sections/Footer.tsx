@@ -74,7 +74,7 @@ export default function Footer({ settings }: { settings: SiteSettings | null }) 
               ['#', s.address ?? "Rue de l'ancien siège Unir"],
               ['#', s.addressLine2 ?? 'Agbalépédo, Lomé - Togo'],
               [`tel:${s.phone?.replace(/\s/g, '')}`, s.phone ?? '+228 9603 4681'],
-              [`mailto:${s.email}`, s.email ?? 'eam.togo@gmail.com'],
+              [`mailto:${s.email}`, s.email ?? 'contact@eamotorsafrique.com'],
               ['#', 'Togo · Bénin · Burkina Faso'],
             ].map(([href, label]) => (
               <li key={label} style={{ marginBottom: '8px' }}>

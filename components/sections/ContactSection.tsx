@@ -17,7 +17,7 @@ const iconBox: React.CSSProperties = {
 
 export default function ContactSection({ settings }: { settings: SiteSettings | null }) {
   const s = settings ?? {
-    phone: '+228 9603 4681', email: 'eam.togo@gmail.com',
+    phone: '+228 9603 4681', email: 'contact@eamotorsafrique.com',
     address: "Rue de l'ancien siège Unir", addressLine2: 'Agbalépédo, Lomé - Togo',
     zone: 'Togo · Bénin · Burkina Faso',
     hours: 'Lun–Ven 08h–18h · Sam 08h–14h',
