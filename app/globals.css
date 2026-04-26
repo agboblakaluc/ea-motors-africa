@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* EA Motors — brand palette */
+  --navy:      #050d1a;          /* fond sombre principal */
+  --blue:      #0F2B5B;          /* navy intermédiaire (sections, cards) */
+  --blue-mid:  #1a4080;          /* hover states */
+  --accent:    #0F2B5B;          /* bleu navy EA Motors — CTA, liens, accents */
+  --accent-h:  #1a4080;          /* hover accent */
+  --blue-light:#2a5298;          /* teinte claire */
+  --blue-pale: #eff6ff;          /* fond très clair */
+  --silver:    #8a9ab0;
+  --silver-l:  #c8d2de;
+  --metal: linear-gradient(135deg, #b0b8c4 0%, #dde3ea 40%, #f5f7fa 60%, #c8d0da 100%);
+  --white: #fff;
+  --off:   #f8fafc;
+  --light: #eef2f8;
+  --dark:  #050d1a;              /* = --navy pour cohérence */
+  --mid:   #3a4a60;
+  --soft:  #6b7e97;
+  --border: rgba(5, 13, 26, 0.12);
+  --sh-sm: 0 2px 16px rgba(5, 13, 26, 0.10);
+  --sh-md: 0 8px 40px rgba(5, 13, 26, 0.18);
+  --sh-lg: 0 20px 60px rgba(5, 13, 26, 0.28);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+/* ── Hero transitions ──────────────────────────────────── */
+@keyframes hero-slide-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-ken-burns {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.0); }
+}
+@keyframes hero-clip-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+@keyframes hero-line-grow {
+  from { width: 0; }
+  to   { width: 48px; }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--dark);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--light); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
+
+/* Typography helpers */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+
+.text-metal {
+  background: var(--metal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section tag */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 6px 24px rgba(15, 43, 91, 0.35);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background: var(--accent-h);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(15, 43, 91, 0.50);
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 30px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-br {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

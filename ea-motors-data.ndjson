@@ -1,0 +1,29 @@
+{"_id":"siteSettings","_type":"siteSettings","phone":"+228 9603 4681","email":"eam.togo@gmail.com","address":"Rue de l'ancien siège Unir","addressLine2":"Agbalépédo, Lomé - Togo","zone":"Togo · Bénin · Burkina Faso","hours":"Lun–Ven 08h–18h · Sam 08h–14h","slogan":"▶ Driving Excellence !","socialFacebook":"https://facebook.com/eamotors","socialWhatsapp":"https://wa.me/22896034681"}
+{"_id":"stats","_type":"stats","chiffre1":"500+","label1":"Véhicules vendus","chiffre2":"8","label2":"Ans d'expérience","chiffre3":"12","label3":"Marques partenaires","chiffre4":"3","label4":"Pays desservis"}
+{"_id":"domaine-01","_type":"domaine","numero":"01","titre":"Vente Véhicules Neufs & Occasion","points":["Importation directe Europe & Asie","Toutes marques — gros & détail","Véhicules particuliers & utilitaires"],"ordre":1}
+{"_id":"domaine-02","_type":"domaine","numero":"02","titre":"Location de Véhicules","points":["Flotte professionnelle & particuliers","Courte, moyenne & longue durée","Tarifs compétitifs & flexibles"],"ordre":2}
+{"_id":"domaine-03","_type":"domaine","numero":"03","titre":"Concession & Représentation","points":["Négociation directe constructeurs","Réseaux de distribution officiels","Partenariats exclusifs Afrique de l'Ouest"],"ordre":3}
+{"_id":"domaine-04","_type":"domaine","numero":"04","titre":"Négoce & Commerce Général","points":["Véhicules, pièces & équipements","Multi-marchés & multi-produits","Solutions B2B sur mesure"],"ordre":4}
+{"_id":"domaine-05","_type":"domaine","numero":"05","titre":"Import / Export","points":["Chaîne d'approvisionnement complète","Procédures douanières CEDEAO maîtrisées","Suivi logistique port à port"],"ordre":5}
+{"_id":"marque-01","_type":"marque","nom":"BYD","ordre":1}
+{"_id":"marque-02","_type":"marque","nom":"MG Motor","ordre":2}
+{"_id":"marque-03","_type":"marque","nom":"Lingco","ordre":3}
+{"_id":"marque-04","_type":"marque","nom":"SINOTRUK","ordre":4}
+{"_id":"marque-05","_type":"marque","nom":"FAW Trucks","ordre":5}
+{"_id":"marque-06","_type":"marque","nom":"HOWO","ordre":6}
+{"_id":"marque-07","_type":"marque","nom":"Sany","ordre":7}
+{"_id":"marque-08","_type":"marque","nom":"Mahindra","ordre":8}
+{"_id":"marque-09","_type":"marque","nom":"Foton","ordre":9}
+{"_id":"marque-10","_type":"marque","nom":"Dongfeng","ordre":10}
+{"_id":"temoignage-01","_type":"temoignage","nom":"Kofi Boateng","role":"Directeur Logistique","ville":"Accra, Ghana","note":5,"texte":"EA Motors a géré l'importation de notre flotte de 20 véhicules depuis la Chine jusqu'à Lomé sans aucun accroc. Délais respectés, documentation impeccable. Un partenaire de confiance pour nos opérations en Afrique de l'Ouest.","initiales":"KB","ordre":1}
+{"_id":"temoignage-02","_type":"temoignage","nom":"Amadou Mensah","role":"Client Particulier","ville":"Lomé, Togo","note":5,"texte":"J'ai commandé un BYD Sealion 7 via EA Motors. Tout a été géré de A à Z par leur équipe : import, dédouanement, livraison. En 6 semaines comme promis. Je recommande les yeux fermés.","initiales":"AM","ordre":2}
+{"_id":"temoignage-03","_type":"temoignage","nom":"Félix Sémévo","role":"Directeur Général BTP","ville":"Lomé, Togo","note":5,"texte":"Notre entreprise BTP utilise les camions HOWO fournis par EA Motors depuis 2 ans. Rapport qualité-prix imbattable, et le SAV est très réactif sur Lomé. Je n'irai plus ailleurs.","initiales":"FS","ordre":3}
+{"_id":"temoignage-04","_type":"temoignage","nom":"Yao Dossou","role":"Importateur","ville":"Cotonou, Bénin","note":5,"texte":"La maîtrise des procédures douanières CEDEAO par EA Motors nous a fait économiser un temps et un argent considérables. Une équipe professionnelle et disponible, 7j/7.","initiales":"YD","ordre":4}
+{"_id":"vehicule-01","_type":"vehicule","marque":"BYD","modele":"Sealion 7","categorie":"ev","badge":"Nouveau","prix":"À partir de 22 500 000 FCFA","puissance":"523 ch","annee":"2024","specs":["Autonomie 520 km","0-100 km/h en 3.8s","Charge rapide 150 kW","AWD 4 roues motrices"],"ordre":1}
+{"_id":"vehicule-02","_type":"vehicule","marque":"BYD","modele":"Atto 3","categorie":"ev","badge":"Populaire","prix":"À partir de 17 800 000 FCFA","puissance":"204 ch","annee":"2024","specs":["Autonomie 480 km","Charge rapide DC","7 airbags","Écran rotatif 15.6\""],"ordre":2}
+{"_id":"vehicule-03","_type":"vehicule","marque":"MG Motor","modele":"ZS EV","categorie":"ev","prix":"À partir de 14 500 000 FCFA","puissance":"177 ch","annee":"2024","specs":["Autonomie 440 km","Apple CarPlay","Caméra 360°","Garantie 7 ans"],"ordre":3}
+{"_id":"vehicule-04","_type":"vehicule","marque":"Mahindra","modele":"Scorpio N","categorie":"suv","badge":"Best-seller","prix":"À partir de 16 200 000 FCFA","puissance":"175 ch","annee":"2024","specs":["7 places","4x4 terrain","Diesel 2.2L","Climatisation tri-zone"],"ordre":4}
+{"_id":"vehicule-05","_type":"vehicule","marque":"Foton","modele":"Sauvana","categorie":"suv","prix":"À partir de 13 900 000 FCFA","puissance":"190 ch","annee":"2023","specs":["7 places","Traction intégrale","Diesel robuste","Adapté pistes africaines"],"ordre":5}
+{"_id":"vehicule-06","_type":"vehicule","marque":"FAW","modele":"Camion Benne 8x4","categorie":"pro","badge":"Stock dispo","prix":"Sur devis","puissance":"380 ch","annee":"2024","specs":["Charge utile 25T","Boîte 12 vitesses","Cabine confortable","Garantie 2 ans"],"ordre":6}
+{"_id":"vehicule-07","_type":"vehicule","marque":"HOWO","modele":"Tracteur 6x4 420ch","categorie":"pro","prix":"Sur devis","puissance":"420 ch","annee":"2024","specs":["Semi-remorque","Moteur WD615","Cabine HW76","Norme Euro III"],"ordre":7}
+{"_id":"vehicule-08","_type":"vehicule","marque":"Dongfeng","modele":"Pick-up Hero","categorie":"suv","prix":"À partir de 11 500 000 FCFA","puissance":"150 ch","annee":"2024","specs":["Double cabine","4x4 électronique","Diesel 2.5L","Benne aluminium"],"ordre":8}
