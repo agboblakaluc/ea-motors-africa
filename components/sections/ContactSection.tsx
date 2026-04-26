@@ -28,10 +28,18 @@ export default function ContactSection({ settings }: { settings: SiteSettings | 
   const [form, setForm] = useState({ prenom: '', nom: '', email: '', tel: '', type: '', detail: '', message: '' })
 
   const handleSubmit = async () => {
+    if (!form.prenom || !form.nom || !form.email) return
     setSending(true)
-    await new Promise((r) => setTimeout(r, 1500))
-    setSent(true)
-    setSending(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) setSent(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
