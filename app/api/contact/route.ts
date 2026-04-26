@@ -1,19 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
   const { prenom, nom, email, tel, type, detail, message } = body
-
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  })
 
   const html = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e0e6ef;border-radius:6px;overflow:hidden">
@@ -41,8 +33,8 @@ export async function POST(req: NextRequest) {
   `
 
   try {
-    await transporter.sendMail({
-      from: `"EA MOTORS Site" <${process.env.GMAIL_USER}>`,
+    await resend.emails.send({
+      from: 'EA MOTORS <contact@eamotorsafrique.com>',
       to: 'eam.togo@gmail.com',
       replyTo: email,
       subject: `[EA MOTORS] ${type} — ${prenom} ${nom}`,
