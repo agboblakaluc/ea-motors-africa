@@ -18,7 +18,7 @@ export function AboutSection({ apropos }: { apropos: Apropos | null }) {
         {/* Image */}
         <div style={{ position: 'relative', height: '480px' }}>
           <img
-            src={apropos?.image ? urlFor(apropos.image).width(800).url() : 'https://images.unsplash.com/photo-1Zl16CRLnV0?w=800&q=80'}
+            src={apropos?.image ? urlFor(apropos.image).width(800).url() : '/faw/family%20entrepot.png'}
             alt="EA Motors showroom"
             style={{ width: '88%', height: '100%', objectFit: 'cover', borderRadius: '4px', boxShadow: 'var(--sh-lg)', filter: 'brightness(.92)' }}
           />

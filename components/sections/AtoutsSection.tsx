@@ -30,7 +30,7 @@ export default function AtoutsSection({ atouts }: { atouts: AtoutsData | null })
         </div>
         <div style={{ position: 'relative', height: '440px' }}>
           <img
-            src={atouts?.image ? urlFor(atouts.image).width(800).url() : 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80'}
+            src={atouts?.image ? urlFor(atouts.image).width(800).url() : '/faw/montagne.png'}
             alt="EA Motors fleet"
             style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '6px', boxShadow: 'var(--sh-lg)', filter: 'brightness(.9)' }}
           />
