@@ -16,11 +16,14 @@ const iconBox: React.CSSProperties = {
 }
 
 export default function ContactSection({ settings }: { settings: SiteSettings | null }) {
-  const s = settings ?? {
-    phone: '+228 9603 4681', email: 'contact@eamotorsafrique.com',
-    address: "Rue de l'ancien siège Unir", addressLine2: 'Agbalépédo, Lomé - Togo',
-    zone: 'Togo · Bénin · Burkina Faso',
-    hours: 'Lun–Ven 08h–18h · Sam 08h–14h',
+  const s = {
+    ...(settings ?? {}),
+    email: 'contact@eamotorsafrique.com',
+    phone: settings?.phone ?? '+228 9603 4681',
+    address: settings?.address ?? "Rue de l'ancien siège Unir",
+    addressLine2: settings?.addressLine2 ?? 'Agbalépédo, Lomé - Togo',
+    zone: settings?.zone ?? 'Togo · Bénin · Burkina Faso',
+    hours: settings?.hours ?? 'Lun–Ven 08h–18h · Sam 08h–14h',
   } as SiteSettings
 
   const [sent, setSent] = useState(false)

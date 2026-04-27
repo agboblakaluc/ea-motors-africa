@@ -2,7 +2,7 @@
 import type { SiteSettings } from '@/lib/types'
 
 export default function Footer({ settings }: { settings: SiteSettings | null }) {
-  const s = settings ?? {} as SiteSettings
+  const s = { ...(settings ?? {}), email: 'contact@eamotorsafrique.com' } as SiteSettings
 
   return (
     <footer style={{ background: 'var(--dark)', padding: '62px 6% 30px' }}>
