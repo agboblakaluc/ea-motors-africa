@@ -42,8 +42,8 @@ export default function FinancementSection({ financement }: { financement: Finan
             {(financement?.options ?? [
               "Crédit-bail (LOA) — jusqu'à 60 mois",
               'Location Longue Durée (LLD) — flotte professionnelle',
-              'Crédit classique — apport à partir de 0%',
-              'Financement sans apport — dossier sous 24h',
+              'Financement adapté — jusqu'à 100% selon votre dossier',
+              'Solutions sur mesure — réponse sous 48h ouvrées',
               'Reprise de votre ancien véhicule déduite',
             ]).map((opt, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', fontSize: '.86rem', color: 'rgba(255,255,255,.76)', lineHeight: 1.6 }}>

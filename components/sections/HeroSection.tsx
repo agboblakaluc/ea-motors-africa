@@ -98,7 +98,7 @@ export default function HeroSection({ hero, settings }: HeroProps) {
     titleLine1: 'Mobilité',
     titleLine2: 'Excellence',
     titleLine3: 'Logistique',
-    subtitle: "EA MOTORS — entreprise dynamique spécialisée dans les solutions de mobilité, le négoce et la logistique en Afrique de l'Ouest.",
+    subtitle: "EA Motors SARL — spécialisée dans la distribution d'équipements industriels neufs et la structuration de financements d'actifs pour les opérateurs de transport, de BTP et du secteur minier en Afrique de l'Ouest.",
     ctaPrimary: 'Voir les véhicules →',
     ctaSecondary: 'Prendre RDV',
   }

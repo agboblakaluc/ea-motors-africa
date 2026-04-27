@@ -7,9 +7,9 @@ import type { Apropos, Domaine, Equipement } from '@/lib/types'
 export function AboutSection({ apropos }: { apropos: Apropos | null }) {
   const d = apropos ?? {
     titre: 'Qui Sommes-Nous ?',
-    titreMet: 'Dynamique',
-    texte: "Concessionnaire agréé FAW Trucks pour l'Afrique de l'Ouest, EA MOTORS est votre partenaire de référence pour l'acquisition d'engins lourds importés directement de Chine. Nous proposons des solutions clé en main — achat, financement, livraison — pour transporteurs, entreprises de BTP et opérateurs miniers au Togo et dans la sous-région.",
-    vision: "Notre vision est de devenir un acteur de référence en Afrique de l'Ouest en offrant des services fiables, transparents et compétitifs dans le domaine automobile et logistique.",
+    titreMet: 'jeune.',
+    texte: "EA Motors SARL est une société spécialisée dans la distribution de véhicules et équipements industriels neufs, et dans la structuration de solutions de financement d'actifs pour les opérateurs économiques d'Afrique de l'Ouest.\n\nBasée à Lomé, Togo, EA Motors s'appuie sur l'expertise de ses dirigeants en commerce international, distribution automobile et financement d'actifs pour proposer une offre complète : importation directe des meilleurs constructeurs, accès à des solutions de financement adaptées à chaque profil — et un accompagnement de A à Z, de la sélection de l'équipement jusqu'à la livraison.\n\nNotre objectif : permettre à chaque opérateur — transporteur, entreprise de BTP, exploitant minier — d'accéder à des équipements de qualité à des conditions financières réalistes.",
+    vision: "Notre vision est de devenir l'acteur de référence en Afrique de l'Ouest pour la distribution d'équipements industriels neufs et la structuration de financements d'actifs, en proposant une offre fiable, transparente et compétitive.",
   }
 
   return (
@@ -38,7 +38,7 @@ export function AboutSection({ apropos }: { apropos: Apropos | null }) {
         <div>
           <p className="section-tag">{d.titre}</p>
           <h2 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', textTransform: 'uppercase', lineHeight: .95, color: 'var(--dark)' }}>
-            Une Entreprise <span style={{ color: 'var(--blue)' }}>{d.titreMet}</span> & Ambitieuse
+            Une entreprise <span style={{ color: 'var(--blue)' }}>{d.titreMet}</span> Un positionnement solide.
           </h2>
           <div style={{ width: '44px', height: '2px', background: 'var(--blue)', borderRadius: '2px', margin: '14px 0' }} />
           <p style={{ fontSize: '.88rem', color: 'var(--mid)', lineHeight: 1.85, marginBottom: '24px', fontWeight: 300 }}>{d.texte}</p>
