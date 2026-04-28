@@ -11,8 +11,9 @@ export default function FinancementSection({ financement }: { financement: Finan
 
   const principal = Math.max(0, carVal - apport) * qty
   const r = taux / 100 / 12
-  const monthly = principal > 0 && r > 0
-    ? principal * r * Math.pow(1 + r, duree) / (Math.pow(1 + r, duree) - 1)
+  const hasRate = principal > 0 && r > 0
+  const monthly = hasRate
+    ? (principal * r * Math.pow(1 + r, duree)) / (Math.pow(1 + r, duree) - 1)
     : principal / duree
 
   const fmt = (n: number) => Math.round(n).toLocaleString('fr-FR')
