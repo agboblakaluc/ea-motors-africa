@@ -17,15 +17,20 @@ export default function FinancementSection({ financement }: { financement: Finan
 
   const fmt = (n: number) => Math.round(n).toLocaleString('fr-FR')
 
+  const defaultOptions = [
+    "Credit-bail (LOA) — jusqu'a 60 mois",
+    'Location Longue Duree (LLD) — flotte professionnelle',
+    "Financement adapte — jusqu'a 100% selon votre dossier",
+    'Solutions sur mesure — reponse sous 48h ouvrees',
+    'Reprise de votre ancien vehicule deduite',
+  ]
+
   return (
     <section id="financement" style={{ background: 'var(--navy)', padding: '80px 0 90px', position: 'relative', overflow: 'hidden' }}>
-      {/* Décors */}
       <div style={{ position: 'absolute', right: '-8%', top: '-20%', width: '600px', height: '600px', borderRadius: '50%', background: 'rgba(255,255,255,.03)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', left: '-5%', bottom: '-15%', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(255,255,255,.025)', pointerEvents: 'none' }} />
 
-      {/* ── Calculateur + Options ──────────────────────────────────── */}
       <div style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '60px', alignItems: 'start', maxWidth: '1200px', margin: '0 auto', padding: '0 6%' }}>
-        {/* Options de financement */}
         <div>
           <p style={{ fontSize: '.68rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,.45)', marginBottom: '12px' }}>Solutions disponibles</p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', textTransform: 'uppercase', color: 'white', lineHeight: .9, marginBottom: '8px' }}>
@@ -35,20 +40,16 @@ export default function FinancementSection({ financement }: { financement: Finan
             Sur Mesure
           </div>
           <p style={{ fontSize: '.88rem', color: 'rgba(255,255,255,.55)', lineHeight: 1.8, marginBottom: '32px', fontWeight: 300, maxWidth: '480px' }}>
-            {financement?.description ?? "Nos conseillers accompagnent transporteurs, entreprises de BTP et exploitants miniers. Solutions adaptées à chaque profil, de la PME au grand compte."}
+            {financement?.description ?? 'Nos conseillers accompagnent transporteurs, entreprises de BTP et exploitants miniers. Solutions adaptees a chaque profil, de la PME au grand compte.'}
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            {(financement?.options ?? [
-              "Crédit-bail (LOA) — jusqu'à 60 mois",
-              'Location Longue Durée (LLD) — flotte professionnelle',
-              "Financement adapté — jusqu'à 100% selon votre dossier",
-              'Solutions sur mesure — réponse sous 48h ouvrées',
-              'Reprise de votre ancien véhicule déduite',
-            ]).map((opt, i) => (
+            {(financement?.options ?? defaultOptions).map((opt, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', fontSize: '.86rem', color: 'rgba(255,255,255,.76)', lineHeight: 1.6 }}>
                 <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </div>
                 {opt}
               </div>
@@ -56,7 +57,7 @@ export default function FinancementSection({ financement }: { financement: Finan
           </div>
 
           <div style={{ marginTop: '36px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <a href="#contact" className="btn-primary">Déposer mon dossier →</a>
+            <a href="#contact" className="btn-primary">Deposer mon dossier &rarr;</a>
             <a href="#contact" style={{
               border: '2px solid rgba(255,255,255,.25)', color: 'rgba(255,255,255,.8)',
               fontFamily: 'var(--font-body)', fontSize: '.78rem', fontWeight: 700,
@@ -64,29 +65,28 @@ export default function FinancementSection({ financement }: { financement: Finan
               padding: '13px 30px', borderRadius: '2px', textDecoration: 'none',
               display: 'inline-block', transition: 'all .3s',
             }}>
-              Parler à un conseiller
+              Parler a un conseiller
             </a>
           </div>
         </div>
 
-        {/* Calculateur */}
         <div style={{ background: 'white', borderRadius: '8px', padding: '36px', boxShadow: '0 24px 80px rgba(0,0,0,.3)', position: 'sticky', top: '24px' }}>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--dark)', letterSpacing: '.04em', textTransform: 'uppercase', marginBottom: '2px' }}>
-            Simuler mes mensualités
+            Simuler mes mensualites
           </div>
           <div style={{ fontSize: '.74rem', color: 'var(--soft)', marginBottom: '28px' }}>
-            Taux indicatif {taux}% / an · engins lourds
+            Taux indicatif {taux}% / an &middot; engins lourds
           </div>
 
           <CalcSlider
-            label="Quantité de véhicules"
+            label="Quantite de vehicules"
             value={qty} min={1} max={20} step={1}
-            display={`${qty} véhicule${qty > 1 ? 's' : ''}`}
+            display={`${qty} vehicule${qty > 1 ? 's' : ''}`}
             onChange={setQty}
             marks={['1', '10', '20']}
           />
           <CalcSlider
-            label="Valeur du véhicule"
+            label="Valeur du vehicule"
             value={carVal} min={5_000_000} max={200_000_000} step={1_000_000}
             display={`${fmt(carVal)} FCFA`}
             onChange={setCarVal}
@@ -100,7 +100,7 @@ export default function FinancementSection({ financement }: { financement: Finan
             marks={['0', '30M', '60M']}
           />
           <CalcSlider
-            label="Durée (mois)"
+            label="Duree (mois)"
             value={duree} min={12} max={60} step={12}
             display={`${duree} mois`}
             onChange={setDuree}
@@ -109,7 +109,7 @@ export default function FinancementSection({ financement }: { financement: Finan
 
           <div style={{ background: 'var(--navy)', borderRadius: '6px', padding: '22px 24px', marginTop: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-              <div style={{ fontSize: '.68rem', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,.6)', marginBottom: '3px' }}>Mensualité estimée</div>
+              <div style={{ fontSize: '.68rem', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,.6)', marginBottom: '3px' }}>Mensualite estimee</div>
               <div style={{ fontSize: '.62rem', color: 'rgba(255,255,255,.4)' }}>Indicatif — sans engagement</div>
             </div>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', color: 'white', lineHeight: 1 }}>
@@ -125,11 +125,11 @@ export default function FinancementSection({ financement }: { financement: Finan
             marginTop: '14px', transition: 'all .3s',
             boxSizing: 'border-box',
           }}>
-            Obtenir un devis officiel →
+            Obtenir un devis officiel &rarr;
           </a>
 
           <p style={{ fontSize: '.62rem', color: 'var(--soft)', textAlign: 'center', marginTop: '10px', lineHeight: 1.5 }}>
-            Simulation non contractuelle · Taux soumis à validation dossier
+            Simulation non contractuelle &middot; Taux soumis a validation dossier
           </p>
         </div>
       </div>
