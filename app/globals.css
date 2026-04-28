@@ -57,6 +57,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -64,6 +66,11 @@ body {
   color: var(--dark);
   font-family: var(--font-body);
   overflow-x: hidden;
+  max-width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
 }
 
 ::-webkit-scrollbar { width: 4px; }
