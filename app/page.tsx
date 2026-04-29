@@ -56,7 +56,7 @@ export default async function HomePage() {
         <HeroSection hero={hero} settings={settings} />
         <StatsSection stats={stats} />
         <AboutSection apropos={apropos} />
-<DomainesSection domaines={domaines ?? []} />
+        <DomainesSection domaines={domaines ?? []} />
         <EquipementsSection equipements={equipements ?? []} />
         <FinancementSection financement={financement} />
         <VehiculesSection vehicules={vehicules ?? []} />
