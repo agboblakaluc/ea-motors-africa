@@ -4,14 +4,16 @@ import { urlFor } from '@/lib/sanity'
 import type { Apropos, Domaine, Equipement } from '@/lib/types'
 
 // ─── ABOUT ────────────────────────────────────────────────────────────────────
-const ABOUT_TEXTE = "EA Motors SARL est une société spécialisée dans la distribution de véhicules et équipements industriels neufs, et dans la structuration de solutions de financement d'actifs pour les opérateurs économiques d'Afrique de l'Ouest.\n\nBasée à Lomé, Togo, EA Motors s'appuie sur l'expertise de ses dirigeants en commerce international, distribution automobile et financement d'actifs pour proposer une offre complète : importation directe des meilleurs constructeurs, accès à des solutions de financement adaptées à chaque profil, et un accompagnement de A à Z, de la sélection de l'équipement jusqu'à la livraison.\n\nNotre objectif : permettre à chaque opérateur, transporteur, entreprise de BTP, exploitant minier... d'accéder à des équipements de qualité à des conditions financières réalistes."
+const ABOUT_TEXTE = "EA Motors SARL est une société basée à Lomé, Togo, spécialisée dans la distribution de véhicules et équipements industriels neufs, et dans la structuration de solutions de financement d'actifs pour les opérateurs économiques d'Afrique de l'Ouest. Intermédiaire de référence entre les grands constructeurs asiatiques et le marché régional, nous nous appuyons sur une expertise solide en commerce international, distribution automobile et financement d'actifs."
+
+const ABOUT_MISSION = "Notre mission est simple : permettre à chaque transporteur, entreprise de BTP ou exploitant minier d'accéder à des équipements de qualité — flottes professionnelles, camions lourds, engins de chantier — à des conditions financières réalistes. Importation directe, financement sur 36 à 60 mois en partenariat avec les banques locales, livraison au Togo, au Bénin et au Burkina Faso. Nous gérons tout de A à Z — de la sélection de l'équipement jusqu'à la livraison."
 
 export function AboutSection({ apropos }: { apropos: Apropos | null }) {
   const d = {
     titre: apropos?.titre ?? 'Qui Sommes-Nous ?',
     titreMet: 'jeune.',
     texte: ABOUT_TEXTE,
-    vision: apropos?.vision ?? "Notre vision est de devenir l'acteur de référence en Afrique de l'Ouest pour la distribution d'équipements industriels neufs et la structuration de financements d'actifs, en proposant une offre fiable, transparente et compétitive.",
+    vision: ABOUT_MISSION,
     image: apropos?.image,
   }
 
