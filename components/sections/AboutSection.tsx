@@ -44,7 +44,11 @@ export function AboutSection({ apropos }: { apropos: Apropos | null }) {
             Une entreprise <span style={{ color: 'var(--blue)' }}>{d.titreMet}</span> Un positionnement solide.
           </h2>
           <div style={{ width: '44px', height: '2px', background: 'var(--blue)', borderRadius: '2px', margin: '14px 0' }} />
-          <p style={{ fontSize: '.88rem', color: 'var(--mid)', lineHeight: 1.85, marginBottom: '24px', fontWeight: 300 }}>{d.texte}</p>
+          <div style={{ marginBottom: '24px' }}>
+            {d.texte.split('\n\n').map((para, i) => (
+              <p key={i} style={{ fontSize: '.88rem', color: 'var(--mid)', lineHeight: 1.85, fontWeight: 300, marginBottom: i < d.texte.split('\n\n').length - 1 ? '14px' : 0 }}>{para}</p>
+            ))}
+          </div>
           <div style={{ background: 'var(--blue-pale)', borderLeft: '3px solid var(--blue)', padding: '15px 18px', borderRadius: '0 4px 4px 0', fontSize: '.85rem', color: 'var(--dark)', lineHeight: 1.75, fontStyle: 'italic', marginBottom: '28px' }}>
             {d.vision}
           </div>
