@@ -31,7 +31,7 @@ export default function FinancementSection({ financement }: { financement: Finan
       <div style={{ position: 'absolute', right: '-8%', top: '-20%', width: '600px', height: '600px', borderRadius: '50%', background: 'rgba(255,255,255,.03)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', left: '-5%', bottom: '-15%', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(255,255,255,.025)', pointerEvents: 'none' }} />
 
-      <div style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '60px', alignItems: 'start', maxWidth: '1200px', margin: '0 auto', padding: '0 6%' }}>
+      <div className="fin-grid" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '60px', alignItems: 'start', maxWidth: '1200px', margin: '0 auto', padding: '0 6%' }}>
         <div>
           <p style={{ fontSize: '.68rem', fontWeight: 700, letterSpacing: '.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,.45)', marginBottom: '12px' }}>Solutions disponibles</p>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', textTransform: 'uppercase', color: 'white', lineHeight: .9, marginBottom: '8px' }}>
@@ -71,7 +71,7 @@ export default function FinancementSection({ financement }: { financement: Finan
           </div>
         </div>
 
-        <div style={{ background: 'white', borderRadius: '8px', padding: '36px', boxShadow: '0 24px 80px rgba(0,0,0,.3)', position: 'sticky', top: '24px' }}>
+        <div className="fin-calc" style={{ background: 'white', borderRadius: '8px', padding: '36px', boxShadow: '0 24px 80px rgba(0,0,0,.3)', position: 'sticky', top: '24px' }}>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--dark)', letterSpacing: '.04em', textTransform: 'uppercase', marginBottom: '2px' }}>
             Simuler mes mensualites
           </div>

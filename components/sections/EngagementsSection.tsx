@@ -29,7 +29,7 @@ export default function EngagementsSection({ engagements }: { engagements: Engag
           Nos <span style={{ color: 'var(--blue)' }}>Engagements</span>
         </h2>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2px', background: 'rgba(27,58,107,.07)' }}>
+      <div className="engagements-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2px', background: 'rgba(27,58,107,.07)' }}>
         {items.map((item, i) => (
           <div key={i}
             style={{ background: 'white', padding: '36px 26px', transition: 'background .3s' }}

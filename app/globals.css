@@ -237,6 +237,31 @@ img, video, iframe {
   .vehicule-modal-inner {
     grid-template-columns: 1fr !important;
   }
+
+  /* ── Financement : 2-col → 1-col, sticky désactivé ── */
+  .fin-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .fin-calc {
+    position: static !important;
+  }
+
+  /* ── Engagements : 4-col → 2-col ── */
+  .engagements-grid {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+
+  /* ── Contact : 2-col → 1-col ── */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* ── Footer : 4-col → 2-col ── */
+  .ft-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+  }
 }
 
 /* Très petits écrans (< 480 px) */
@@ -248,6 +273,12 @@ img, video, iframe {
     grid-template-columns: 1fr !important;
   }
   .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .engagements-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .ft-grid {
     grid-template-columns: 1fr !important;
   }
 }

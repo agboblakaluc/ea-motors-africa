@@ -71,7 +71,7 @@ export default function ContactSection({ settings }: { settings: SiteSettings | 
         </h2>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '72px', maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '72px', maxWidth: '1200px', margin: '0 auto' }}>
         {/* Info panel */}
         <div>
           {contactItems.map((item) => (
