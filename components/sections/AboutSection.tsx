@@ -4,16 +4,12 @@ import { urlFor } from '@/lib/sanity'
 import type { Apropos, Domaine, Equipement } from '@/lib/types'
 
 // ─── ABOUT ────────────────────────────────────────────────────────────────────
-const DEFAULT_TEXTE = "EA Motors SARL est une société basée à Lomé, Togo, spécialisée dans la distribution de véhicules et équipements industriels neufs, et dans la structuration de solutions de financement d'actifs pour les opérateurs économiques d'Afrique de l'Ouest. Intermédiaire de référence entre les grands constructeurs asiatiques et le marché régional, nous nous appuyons sur une expertise solide en commerce international, distribution automobile et financement d'actifs."
-
-const DEFAULT_MISSION = "Notre mission est simple : permettre à chaque transporteur, entreprise de BTP ou exploitant minier d'accéder à des équipements de qualité — flottes professionnelles, camions lourds, engins de chantier — à des conditions financières réalistes. Importation directe, financement sur 36 à 60 mois en partenariat avec les banques locales, livraison au Togo, au Bénin et au Burkina Faso. Nous gérons tout de A à Z — de la sélection de l'équipement jusqu'à la livraison."
-
 export function AboutSection({ apropos }: { apropos: Apropos | null }) {
   const d = {
-    titre: apropos?.titre ?? 'Qui Sommes-Nous ?',
-    titreMet: apropos?.titreMet ?? 'jeune.',
-    texte: apropos?.texte ?? DEFAULT_TEXTE,
-    vision: apropos?.vision ?? DEFAULT_MISSION,
+    titre: apropos?.titre ?? '',
+    titreMet: apropos?.titreMet ?? '',
+    texte: apropos?.texte ?? '',
+    vision: apropos?.vision ?? '',
     image: apropos?.image,
   }
 
@@ -42,18 +38,22 @@ export function AboutSection({ apropos }: { apropos: Apropos | null }) {
         {/* Text */}
         <div>
           <p className="section-tag">{d.titre}</p>
-          <h2 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', textTransform: 'uppercase', lineHeight: .95, color: 'var(--dark)' }}>
-            Une entreprise <span style={{ color: 'var(--blue)' }}>{d.titreMet}</span> Un positionnement solide.
+          <h2 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(2.5rem,5vw,4.5rem)', textTransform: 'uppercase', lineHeight: .95, color: 'var(--dark)', whiteSpace: 'pre-line' }}>
+            {d.titreMet}
           </h2>
           <div style={{ width: '44px', height: '2px', background: 'var(--blue)', borderRadius: '2px', margin: '14px 0' }} />
-          <div style={{ marginBottom: '24px' }}>
-            {d.texte.split('\n\n').map((para, i) => (
-              <p key={i} style={{ fontSize: '.88rem', color: 'var(--mid)', lineHeight: 1.85, fontWeight: 300, marginBottom: i < d.texte.split('\n\n').length - 1 ? '14px' : 0 }}>{para}</p>
-            ))}
-          </div>
-          <div style={{ background: 'var(--blue-pale)', borderLeft: '3px solid var(--blue)', padding: '15px 18px', borderRadius: '0 4px 4px 0', fontSize: '.85rem', color: 'var(--dark)', lineHeight: 1.75, fontStyle: 'italic', marginBottom: '28px' }}>
-            {d.vision}
-          </div>
+          {d.texte && (
+            <div style={{ marginBottom: '24px' }}>
+              {d.texte.split('\n\n').map((para, i, arr) => (
+                <p key={i} style={{ fontSize: '.88rem', color: 'var(--mid)', lineHeight: 1.85, fontWeight: 300, marginBottom: i < arr.length - 1 ? '14px' : 0 }}>{para}</p>
+              ))}
+            </div>
+          )}
+          {d.vision && (
+            <div style={{ background: 'var(--blue-pale)', borderLeft: '3px solid var(--blue)', padding: '15px 18px', borderRadius: '0 4px 4px 0', fontSize: '.85rem', color: 'var(--dark)', lineHeight: 1.75, fontStyle: 'italic', marginBottom: '28px' }}>
+              {d.vision}
+            </div>
+          )}
           <a href="#contact" className="btn-primary">Nous rencontrer →</a>
         </div>
       </div>
