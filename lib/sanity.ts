@@ -16,7 +16,7 @@ export function urlFor(source: SanityImageSource) {
   return builder.image(source)
 }
 
-// Typed fetch helper
+// Typed fetch helper — cache: no-store pour éviter le cache Next.js
 export async function sanityFetch<T>(query: string, params?: Record<string, unknown>): Promise<T> {
-  return client.fetch<T>(query, params ?? {})
+  return client.fetch<T>(query, params ?? {}, { cache: 'no-store' })
 }
