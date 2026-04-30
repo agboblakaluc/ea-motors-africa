@@ -27,7 +27,7 @@ import ContactSection from '@/components/sections/ContactSection'
 import Footer from '@/components/sections/Footer'
 import BackToTop from '@/components/ui/BackToTop'
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   const [

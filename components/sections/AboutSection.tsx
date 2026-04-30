@@ -4,16 +4,16 @@ import { urlFor } from '@/lib/sanity'
 import type { Apropos, Domaine, Equipement } from '@/lib/types'
 
 // ─── ABOUT ────────────────────────────────────────────────────────────────────
-const ABOUT_TEXTE = "EA Motors SARL est une société basée à Lomé, Togo, spécialisée dans la distribution de véhicules et équipements industriels neufs, et dans la structuration de solutions de financement d'actifs pour les opérateurs économiques d'Afrique de l'Ouest. Intermédiaire de référence entre les grands constructeurs asiatiques et le marché régional, nous nous appuyons sur une expertise solide en commerce international, distribution automobile et financement d'actifs."
+const DEFAULT_TEXTE = "EA Motors SARL est une société basée à Lomé, Togo, spécialisée dans la distribution de véhicules et équipements industriels neufs, et dans la structuration de solutions de financement d'actifs pour les opérateurs économiques d'Afrique de l'Ouest. Intermédiaire de référence entre les grands constructeurs asiatiques et le marché régional, nous nous appuyons sur une expertise solide en commerce international, distribution automobile et financement d'actifs."
 
-const ABOUT_MISSION = "Notre mission est simple : permettre à chaque transporteur, entreprise de BTP ou exploitant minier d'accéder à des équipements de qualité — flottes professionnelles, camions lourds, engins de chantier — à des conditions financières réalistes. Importation directe, financement sur 36 à 60 mois en partenariat avec les banques locales, livraison au Togo, au Bénin et au Burkina Faso. Nous gérons tout de A à Z — de la sélection de l'équipement jusqu'à la livraison."
+const DEFAULT_MISSION = "Notre mission est simple : permettre à chaque transporteur, entreprise de BTP ou exploitant minier d'accéder à des équipements de qualité — flottes professionnelles, camions lourds, engins de chantier — à des conditions financières réalistes. Importation directe, financement sur 36 à 60 mois en partenariat avec les banques locales, livraison au Togo, au Bénin et au Burkina Faso. Nous gérons tout de A à Z — de la sélection de l'équipement jusqu'à la livraison."
 
 export function AboutSection({ apropos }: { apropos: Apropos | null }) {
   const d = {
     titre: apropos?.titre ?? 'Qui Sommes-Nous ?',
-    titreMet: 'jeune.',
-    texte: ABOUT_TEXTE,
-    vision: ABOUT_MISSION,
+    titreMet: apropos?.titreMet ?? 'jeune.',
+    texte: apropos?.texte ?? DEFAULT_TEXTE,
+    vision: apropos?.vision ?? DEFAULT_MISSION,
     image: apropos?.image,
   }
 
