@@ -6,7 +6,7 @@ export const client = createClient({
   projectId: 'ceiyi7wh',
   dataset: 'production',
   apiVersion: '2024-01-01',
-  useCdn: true,
+  useCdn: false,
   token: process.env.SANITY_API_READ_TOKEN,
 })
 
