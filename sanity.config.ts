@@ -20,8 +20,8 @@ export default defineConfig({
   title: 'EA Motors — Studio',
   basePath: '/studio',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: 'ceiyi7wh',
+  dataset: 'production',
 
   plugins: [
     structureTool({
