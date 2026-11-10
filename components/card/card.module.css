@@ -1,0 +1,71 @@
+.page {
+  --navy: #050d1a; --deep: #0F2B5B; --electric: #2f7bff; --electric-d: #1f63e0;
+  min-height: 100dvh; display: flex; justify-content: center; align-items: flex-start;
+  padding: 20px 16px 40px; font-family: var(--font-body), system-ui, sans-serif; color: #fff;
+  background: radial-gradient(120% 60% at 50% 0%, #1a4080 0%, #0F2B5B 35%, #050d1a 100%);
+}
+.card { width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 14px; }
+.langBar { align-self: flex-end; display: flex; font-size: .85rem; font-weight: 700; letter-spacing: .08em; }
+.langBar > span { display: inline-flex; align-items: center; }
+.sep { color: #8fa6c9; padding: 0 2px; }
+.langBtn { background: none; border: 0; color: #c8d6ee; font: inherit; padding: 12px 10px; min-width: 44px; min-height: 44px; cursor: pointer; border-radius: 8px; }
+.langOn { color: #fff; text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--electric); text-decoration-thickness: 3px; }
+.header { text-align: center; padding: 10px 0 8px; }
+.brand { font-size: .8rem; letter-spacing: .32em; font-weight: 700; color: #8db8ff; margin-bottom: 14px; }
+.name { font-family: var(--font-bebas), sans-serif; font-weight: 400; font-size: clamp(2.6rem, 13vw, 3.6rem); line-height: 1; letter-spacing: .04em; }
+.role { margin-top: 10px; font-size: 1.1rem; color: #dbe6f7; font-weight: 300; }
+.role::after { content: ''; display: block; width: 56px; height: 3px; background: var(--electric); margin: 16px auto 0; border-radius: 2px; }
+
+.actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.action { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 76px; padding: 10px 6px; text-align: center; font-size: .85rem; font-weight: 600; line-height: 1.2; color: #fff; text-decoration: none; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; }
+.action:hover { background: rgba(255,255,255,.18); }
+.wa { background: #128C4A; border-color: #128C4A; }
+.wa:hover { background: #0f7a41; }
+
+.save { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; background: var(--electric-d); color: #fff; font-weight: 700; font-size: 1rem; text-decoration: none; border-radius: 12px; box-shadow: 0 8px 24px rgba(31,99,224,.4); }
+.save:hover { background: #1a54c2; }
+
+.panel { padding: 18px 16px !important; background: #fff; color: #0f1d33; border-radius: 14px; box-shadow: 0 10px 34px rgba(0,0,0,.25); }
+.h2 { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: #1f4fa8; margin-bottom: 8px; font-weight: 700; }
+.h3 { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: #3a4a60; margin: 18px 0 8px; font-weight: 700; }
+.list, .entities { list-style: none; }
+.row { display: flex; align-items: center; gap: 14px; padding: 12px 4px; min-height: 56px; color: inherit; text-decoration: none; border-bottom: 1px solid #e3e9f2; }
+.list li:last-child .row { border-bottom: 0; }
+.row:hover strong { color: var(--electric-d); }
+.row span:last-child, .parent span:last-child, .entityBody { display: flex; flex-direction: column; min-width: 0; }
+.row small, .parent small, .entityBody small { font-size: .78rem; color: #4a5b73; }
+.row strong, .parent strong, .entityBody strong { font-weight: 600; font-size: 1rem; overflow-wrap: anywhere; }
+.ico { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; background: #e8f0fc; color: var(--deep); }
+.parent { display: flex; align-items: center; gap: 14px; padding: 4px; }
+.parent strong { font-size: 1.15rem; letter-spacing: .04em; }
+.entities { display: flex; flex-direction: column; gap: 8px; }
+.entity { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #e3e9f2; border-radius: 10px; background: #f8fafc; }
+.entity .ico { width: 36px; height: 36px; }
+.entityBody { flex: 1; }
+.ext { flex: none; display: grid; place-items: center; width: 44px; height: 44px; color: var(--deep); }
+
+.shareRow { display: flex; gap: 10px; }
+.share, .qrBtn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; color: #fff; font: inherit; font-weight: 600; background: transparent; border: 1.5px solid rgba(255,255,255,.5); border-radius: 12px; cursor: pointer; }
+.share { flex: 1; }
+.qrBtn { width: 54px; }
+.share:hover, .qrBtn:hover { background: rgba(255,255,255,.12); }
+
+.overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(5,13,26,.75); display: grid; place-items: center; padding: 16px; }
+.modal { width: 100%; max-width: 340px; background: #fff; color: #0f1d33; border-radius: 16px; padding: 22px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.mTitle { font-size: 1.1rem; font-weight: 700; }
+.qr { width: 220px; height: 220px; max-width: 100%; border: 1px solid #e3e9f2; border-radius: 10px; }
+.mHint { font-size: .9rem; color: #3a4a60; }
+.mUrl { font-size: .85rem; font-weight: 600; color: var(--deep); overflow-wrap: anywhere; }
+.mBtn, .mBtn2, .mClose { width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 600; border-radius: 10px; cursor: pointer; text-decoration: none; }
+.mBtn { background: var(--deep); color: #fff; border: 0; }
+.mBtn2 { background: #fff; color: var(--deep); border: 1.5px solid var(--deep); }
+.mClose { background: none; border: 0; color: #3a4a60; }
+
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #fff; color: #0f1d33; padding: 12px 18px; border-radius: 10px; font-size: .9rem; font-weight: 600; box-shadow: 0 8px 30px rgba(0,0,0,.35); z-index: 10001; max-width: calc(100vw - 32px); }
+.toast:empty { display: none; }
+
+.page :focus-visible { outline: 3px solid #ffd54a; outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) { .action, .save, .share { transition: background .15s; } }
+
+/* La carte a ses propres actions WhatsApp : on masque le bouton flottant global du site sur cette page. */
+body:has(.page) :global(a[aria-label="Contacter EA Motors sur WhatsApp"]) { display: none !important; }
